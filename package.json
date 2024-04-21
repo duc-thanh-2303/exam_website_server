@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "proxy" : "http://localhost:3000",
+  "proxy" : "https://exam-website-client.vercel.app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
