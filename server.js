@@ -19,6 +19,7 @@ const signinRoutes = require('./routes/signInRouter')
 app.use(cors(
     {
         origin: ["https://exam-website-client.vercel.app"],
+        methods: ["POST", "GET"],
         credentials: true,
     }
 
