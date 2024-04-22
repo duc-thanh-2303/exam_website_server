@@ -7,7 +7,7 @@ const projectController = require('../controller/addProjectController');
 // const upload = multer({ dest: 'uploads/'});
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '../server/src/');
+    cb(null, 'src/images');
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
