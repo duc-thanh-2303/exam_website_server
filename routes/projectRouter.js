@@ -25,4 +25,5 @@ router.post('/dashboard/upload-project', upload.fields([
 
 router.get('/dashboard/project', getProjects)
 
-module.exports = router;
+
+module.exports = router
