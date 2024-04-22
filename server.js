@@ -26,15 +26,12 @@ app.use(cors(
 ))
 app.use(bodyParser.json())
 app.use(express.json())
-
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'src')));
+app.use('/images', express.static(path.join(__dirname, 'src', 'images')));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
-// Cái này hình như là cho phép nối đến build này
-// Chjay ko lỗi
 
 // Connect Database
 mongoose.connect('mongodb+srv://admin123:admin123@vdas.2nktapq.mongodb.net/')

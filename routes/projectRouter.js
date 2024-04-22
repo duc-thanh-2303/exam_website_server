@@ -1,13 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const projectController = require('../controller/addProjectController');
 const { getProjects } = require('../controller/displayProjectController')
 const multer = require('multer');
-// const path = require('path');
-const projectController = require('../controller/addProjectController');
-// const upload = multer({ dest: 'uploads/'});
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '../server/src/');
+    cb(null, 'src/images');
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
@@ -24,8 +23,6 @@ router.post('/dashboard/upload-project', upload.fields([
   { name: 'video', maxCount: 1 }
 ]), projectController.uploadProject);
 
-
 router.get('/dashboard/project', getProjects)
 
-
-module.exports = router
+module.exports = router;
